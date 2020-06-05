@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MediumEditorModule } from 'angular2-medium-editor'
 
 var firebaseConfig = {
   apiKey: "AIzaSyC7C61s1A66V-f6JPQ6r-ZuP_Dbx3sQgr4",
@@ -21,7 +22,6 @@ var firebaseConfig = {
   appId: "1:331887633672:web:d962387bff53291d9f38bd"
 };
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -32,7 +32,8 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule, // storage
+    MediumEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
