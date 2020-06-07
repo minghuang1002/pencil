@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireObject  } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,17 @@ import { AngularFireDatabase } from '@angular/fire/database';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public auth: AuthService, public db: AngularFireDatabase) {}
-  
-  update(value){
-    return this.db.list('text').update(value);
+  itemRef: AngularFireObject<any>;
+  item: Observable<any>;
+  retrieveVal: AngularFireObject<any>;
+  constructor(public auth: AuthService, public db: AngularFireDatabase) {
+    this.itemRef = db.object('text');
+    this.item = this.itemRef.valueChanges();
   }
-  
+
+  updateData(newText: string) {
+    console.log(newText);
+    this.itemRef.update({ text: newText });
+  }
+
 }

@@ -18,9 +18,9 @@
 <div *ngIf="auth.user$ | async as user">
   <h3>Howdy, {{ user.displayName }}</h3>
   <img  [src]="user.photoURL">
-  <medium-editor class = "editor" ng-change = "onUpdate()"
-  [editorOptions]="{'toolbar': {'buttons': ['bold', 'italic', 'underline', 'h1', 'h2', 'h3']}}" 
-  [editorEvents]="subscribe(editableInput, update($event))"></medium-editor>
+  <medium-editor class = "editor" #newtext (keyup)="updateData(newtext.value)"
+  [editorOptions]="{'toolbar': {'buttons': ['bold', 'italic', 'underline', 'h1', 'h2', 'h3']}}"
+  [editorPlaceholder]='this.item'>dfsafsd</medium-editor>
   <button (click)="auth.signOut()">Logout</button>
 </div>
 </ng-template>
