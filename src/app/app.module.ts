@@ -10,7 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { MediumEditorModule } from 'angular2-medium-editor'
+import { MediumEditorModule } from 'angular2-medium-editor';
 
 var firebaseConfig = {
   apiKey: "AIzaSyC7C61s1A66V-f6JPQ6r-ZuP_Dbx3sQgr4",
